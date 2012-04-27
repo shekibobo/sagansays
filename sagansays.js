@@ -40,6 +40,9 @@ bot.on('speak', function (data) {
     } else {
       bot.speak("Too soon, " + name + ", too soon.");
     }
+  } else if (text.match(/^cosmo love$/) && name.match(botCred.owner)) {
+    bot.bop();
+    bot.snag(function() { bot.speak("for science!"); });
   }
 });
 
