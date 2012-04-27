@@ -21,7 +21,9 @@ bot.on('speak', function (data) {
   }
 
   if (text.match(/^\/sagansays$/)) {
-    bot.speak("@" + name + ": " + randomSaganQuote());
+    var message = "@" + name + ": " + randomSaganQuote();
+    bot.speak(message);
+    console.log(message);
   } else if (text.match(/^(cosmo|\/)\s*(awesome|upvote|upboat)$/) || text.match(/(:up:|:boat:|:up::boat:)/)) {
     //bot.vote('up', function () { bot.speak('Whooop!'); });
     bot.speak(":up::boat:");
