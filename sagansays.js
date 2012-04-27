@@ -21,16 +21,19 @@ bot.on('speak', function (data) {
   }
 
   if (text.match(/^\/sagansays$/)) {
-    bot.speak(randomSaganQuote());
+    bot.speak("@" + name + ": " + randomSaganQuote());
   } else if (text.match(/^(cosmo|\/)\s*(awesome|upvote|upboat)$/) || text.match(/(:up:|:boat:|:up::boat:)/)) {
     //bot.vote('up', function () { bot.speak('Whooop!'); });
+    bot.speak(":up::boat:");
     console.log("Song would be upvoted, but I don't think I'm allowed.");
   } else if (text.match(/^(cosmo|\/)\s*(lame|downvote)$/)) {
-    bot.vote('down', function () { bot.speak('Awww'); });
+    //bot.vote('down', function () { bot.speak('Awww'); });
+    console.log("Song would be downvoted, but I'm not allowed.");
   } else if (text.match(/^cosmo\ die$/)) {
-    if (name.match(owner)) {
+    if (name.match(botCret.owner)) {
       bot.speak("I don't know where I'm going, but I'm on my way.");
       bot.roomDeregister();
+      console.log("Leaving the room per your request.");
       process.exit();
     } else {
       bot.speak("Too soon, " + name + ", too soon.");
