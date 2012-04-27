@@ -6,7 +6,6 @@ var botCred = require('./auth');
 
 var bot = new Bot(botCred.auth, botCred.userId);
 
-var owner = /^DJ\ Schwa$/;
 var cosmo = /^cosmo.*carl$/;
 
 console.log(botCred.auth + "\n" + botCred.userId + "\n" + botCred.roomId);
