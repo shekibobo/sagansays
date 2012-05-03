@@ -43,7 +43,7 @@ bot.on('speak', function (data) {
   } else if (text.match(/^cosmo love$/) && name.match(botCred.owner)) {
     bot.bop();
     bot.snag(function() { bot.speak("for science!"); });
-  } else if (text.match(/@?cosmo(\ carl)?/)) {
+  } else if (text.match(/@?cosmo(\ carl)?/) || text.match(/carl/)) {
     console.log(name + " says: " + text);
   }
 });
