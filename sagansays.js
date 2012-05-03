@@ -32,7 +32,7 @@ bot.on('speak', function (data) {
     //bot.vote('down', function () { bot.speak('Awww'); });
     console.log("Song would be downvoted, but I'm not allowed.");
   } else if (text.match(/^cosmo\ die$/)) {
-    if (name.match(botCret.owner)) {
+    if (name.match(botCred.owner)) {
       bot.speak("I don't know where I'm going, but I'm on my way.");
       bot.roomDeregister();
       console.log("Leaving the room per your request.");
